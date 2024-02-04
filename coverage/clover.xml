@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1707053706345" clover="3.2.0">
+  <project timestamp="1707053706345" name="All files">
+    <metrics statements="10" coveredstatements="10" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1" elements="22" coveredelements="22" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
+    <file name="sum.js" path="/Users/ksukuper/JS/JS/sum.js">
+      <metrics statements="10" coveredstatements="10" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="8" type="stmt"/>
+      <line num="28" count="10" type="stmt"/>
+      <line num="30" count="10" type="stmt"/>
+      <line num="31" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="10" type="stmt"/>
+      <line num="33" count="10" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
