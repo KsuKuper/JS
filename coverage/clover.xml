@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707053706345" clover="3.2.0">
-  <project timestamp="1707053706345" name="All files">
-    <metrics statements="10" coveredstatements="10" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1" elements="22" coveredelements="22" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="/Users/ksukuper/JS/JS/sum.js">
-      <metrics statements="10" coveredstatements="10" conditionals="11" coveredconditionals="11" methods="1" coveredmethods="1"/>
-      <line num="16" count="1" type="stmt"/>
-      <line num="17" count="18" type="cond" truecount="2" falsecount="0"/>
-      <line num="26" count="8" type="stmt"/>
-      <line num="28" count="10" type="stmt"/>
-      <line num="30" count="10" type="stmt"/>
-      <line num="31" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="32" count="10" type="stmt"/>
-      <line num="33" count="10" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
+<coverage generated="1707133334402" clover="3.2.0">
+  <project timestamp="1707133334402" name="All files">
+    <metrics statements="25" coveredstatements="21" conditionals="18" coveredconditionals="16" methods="4" coveredmethods="3" elements="47" coveredelements="40" complexity="0" loc="25" ncloc="25" packages="1" files="1" classes="1"/>
+    <file name="maxScore.js" path="/Users/ksukuper/JS/JS/maxScore.js">
+      <metrics statements="25" coveredstatements="21" conditionals="18" coveredconditionals="16" methods="4" coveredmethods="3"/>
       <line num="37" count="1" type="stmt"/>
+      <line num="39" count="9" type="cond" truecount="4" falsecount="0"/>
+      <line num="40" count="2" type="stmt"/>
+      <line num="42" count="7" type="stmt"/>
+      <line num="43" count="7" type="stmt"/>
+      <line num="44" count="7" type="stmt"/>
+      <line num="45" count="33" type="cond" truecount="4" falsecount="0"/>
+      <line num="46" count="3" type="stmt"/>
+      <line num="48" count="30" type="stmt"/>
+      <line num="49" count="40" type="cond" truecount="3" falsecount="1"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="52" count="40" type="cond" truecount="2" falsecount="0"/>
+      <line num="53" count="11" type="stmt"/>
+      <line num="54" count="11" type="stmt"/>
+      <line num="55" count="29" type="cond" truecount="2" falsecount="0"/>
+      <line num="56" count="3" type="stmt"/>
+      <line num="60" count="7" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="63" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="64" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+      <line num="69" count="0" type="stmt"/>
+      <line num="70" count="0" type="stmt"/>
+      <line num="71" count="0" type="stmt"/>
+      <line num="75" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
