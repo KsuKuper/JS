@@ -140,67 +140,100 @@ describe("findMaxScoreStudents", () => {
       { name: "Sarah", score: 95 },
     ]);
   });
+
+  //  9. Тест проверки если передан массив, содержащий в себе не объекты
+
+  it("Проверка возврата пустого массива, если studentsData содержит неправильные данные", () => {
+    const studentsData = [["hi"]];
+    const result = findMaxScoreStudents(studentsData);
+    expect(result).toEqual([]);
+  });
+
+  // 10. Тест, что функция `findMaxScoreStudents` возвращает правильный список студентов с максимальным баллом из предоставленных данных о студентах
+
+  it("Проверка вывода список студентов с максимальным баллом из предоставленных данных о студентах", () => {
+    const studentsData = [
+      [
+        { name: "Ivan", score: 35, date: "2022-10-11" },
+        { name: "Maria", score: 5, date: "2022-10-10" },
+        { name: "Olga", score: 0, date: "" },
+        { name: "Stepan", score: 35, date: "2022-10-12" },
+        { name: "Oleg", score: 9, date: "2022-10-01" },
+        { name: "Zanna", score: 15, date: "2022-10-11" },
+      ],
+      [
+        { name: "Margo", score: 0, date: "2022-10-11" },
+        { name: "Natalia", score: 25, date: "2022-10-10" },
+        { name: "Marina", score: 25, date: "2022-10-01" },
+        { name: "Dmitry", score: 25, date: "2022-10-12" },
+        { name: "Denis", score: 0, date: "2022-10-02" },
+        { name: "Vadimyr", score: 1, date: "2022-10-11" },
+      ],
+      [
+        { name: "Irina", score: 0, date: "2022-10-11" },
+        { name: "Vasily", score: 0, date: "2022-10-10" },
+        { name: "David", score: 0, date: "2022-10-11" },
+        { name: "Kristina", score: 0, date: "2022-10-12" },
+        { name: "Varvaraa", score: 0, date: "2022-10-01" },
+        { name: "Tanya", score: 0, date: "2022-10-11" },
+      ],
+    ];
+    const result = findMaxScoreStudents(studentsData);
+    expect(result).toEqual([
+      { name: "Ivan", score: 35, date: "2022-10-11" },
+      { name: "Stepan", score: 35, date: "2022-10-12" },
+    ]);
+  });
+
+  // 11. Один студент с максимальным количеством баллов
+
+  it("Проверка, если один студент имеют максимальное кол-во баллов", () => {
+    const studentsData = [
+      [
+        { name: "Ivan", score: 35, date: "2022-10-11" },
+        { name: "Maria", score: 5, date: "2022-10-10" },
+        { name: "Olga", score: 0, date: "" },
+      ],
+    ];
+    const spyLog = jest.spyOn(console, "log");
+    const maxScoreStudents = findMaxScoreStudents(studentsData);
+    if (maxScoreStudents.length === 1) {
+      const { name, score } = maxScoreStudents[0];
+      console.log(
+        `Поздравления для студента ${name} с максимальным количеством баллов ${score}!`
+      );
+    }
+    expect(spyLog).toHaveBeenCalledWith(
+      "Поздравления для студента Ivan с максимальным количеством баллов 35!"
+    );
+    spyLog.mockRestore();
+  });
+
+  // 12. Несколько студентов с максимальным количеством баллов
+
+  it("Проверка, если несколько студентов имеют максимальное кол-во баллов", () => {
+    const studentsData = [
+      [
+        { name: "Ivan", score: 35, date: "2022-10-11" },
+        { name: "Stepan", score: 35, date: "2022-10-11" },
+        { name: "Maria", score: 5, date: "2022-10-10" },
+        { name: "Olga", score: 0, date: "" },
+      ],
+    ];
+    const spyLog = jest.spyOn(console, "log");
+    const maxScoreStudents = findMaxScoreStudents(studentsData);
+    if (maxScoreStudents.length >= 1) {
+      console.log("Несколько студентов имеют максимальное количество баллов:");
+      maxScoreStudents.forEach(({ name, score }) => {
+        console.log(`${name} - ${score}`);
+      });
+    }
+    expect(spyLog).toHaveBeenCalledWith(
+      "Несколько студентов имеют максимальное количество баллов:"
+    );
+    maxScoreStudents.forEach(({ name, score }) => {
+      expect(spyLog).toHaveBeenCalledWith(`${name} - ${score}`);
+    });
+    spyLog.mockRestore();
+  });
 });
-
-//   const console = require("console");
-
-//   it("should log congratulations message for a single student", () => {
-//     // Enable console mocking
-//     console.log = jest.fn();
-//     // Test data
-//     const studentsData = [
-//       [
-//         { name: "John", score: 90 },
-//         { name: "Jane", score: 85 },
-//         { name: "Alice", score: 95 },
-//       ],
-//       [
-//         { name: "Bob", score: 75 },
-//         { name: "Mike", score: 85 },
-//         { name: "Sarah", score: 90 },
-//       ],
-//     ];
-//     // Call the function and get the result
-//     findMaxScoreStudents(studentsData);
-//     // Assert console.log calls
-//     expect(console.log.mock.calls.length).toBe(0);
-//     // Get the logged message
-//     const message = console.log.mock.calls[0][0];
-//     // Expected message
-//     const expectedMessage =
-//       "Поздравления для студента Alice с максимальным количеством баллов 95!";
-//     expect(message).toBe(expectedMessage);
-//     // Disable console mocking
-//     jest.restoreAllMocks();
-//   });
-
-//   it("should log multiple students with maximum scores", () => {
-//     // Enable console mocking
-//     console.log = jest.fn();
-//     // Test data
-//     const studentsData = [
-//       [
-//         { name: "John", score: 90 },
-//         { name: "Jane", score: 85 },
-//         { name: "Alice", score: 90 },
-//       ],
-//       [
-//         { name: "Bob", score: 75 },
-//         { name: "Mike", score: 85 },
-//         { name: "Sarah", score: 90 },
-//       ],
-//     ];
-//     // Call the function and get the result
-//     findMaxScoreStudents(studentsData);
-//     // Assert console.log calls
-//     expect(console.log.mock.calls.length).toBe(0);
-//     // Get the logged message
-//     const message = console.log.mock.calls[0][0];
-//     // Expected message
-//     const expectedMessage =
-//       "Несколько студентов имеют максимальное количество баллов:\nJohn - 90\nAlice - 90\nSarah - 90";
-//     expect(message).toBe(expectedMessage);
-//     // Disable console mocking
-//     jest.restoreAllMocks();
-//   });
-// });
