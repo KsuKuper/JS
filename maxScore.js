@@ -10,9 +10,6 @@ function findMaxScoreStudents(studentsData) {
       return;
     }
     studentGroup.forEach((student) => {
-      if (!student || typeof student !== "object") {
-        return;
-      }
       if (student.score > maxScore) {
         maxScore = student.score;
         maxScoreStudents = [student];
@@ -21,19 +18,26 @@ function findMaxScoreStudents(studentsData) {
       }
     });
   });
+  if (maxScoreStudents.length == 1) {
+    const { name, score } = maxScoreStudents[0];
+    console.log(
+      `Поздравляю студента ${name} с максимальным количеством баллов ${score}!`
+    );
+  } else {
+    let fastestStudent = maxScoreStudents[0];
+    maxScoreStudents.forEach((student) => {
+      if (student.date < fastestStudent.date) {
+        fastestStudent = student;
+      }
+    });
+    const { name, score } = fastestStudent || {};
+    console.log(
+      `Поздравляю самого результативного и быстрого студента ${name} с максимальным количеством баллов ${score}!`
+    );
+  }
   return maxScoreStudents;
 }
-let maxScoreStudents = findMaxScoreStudents(studentsData);
-if (maxScoreStudents.length === 1) {
-  const { name, score } = maxScoreStudents[0];
-  console.log(
-    `Поздравления для студента ${name} с максимальным количеством баллов ${score}!`
-  );
-} else {
-  console.log("Несколько студентов имеют максимальное количество баллов:");
-  maxScoreStudents.forEach(({ name, score }) => {
-    console.log(`${name} - ${score}`);
-  });
-}
+
+findMaxScoreStudents(studentsData);
 
 module.exports = findMaxScoreStudents;
