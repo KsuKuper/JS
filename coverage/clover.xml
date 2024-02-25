@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707978291687" clover="3.2.0">
-  <project timestamp="1707978291687" name="All files">
+<coverage generated="1707978673468" clover="3.2.0">
+  <project timestamp="1707978673468" name="All files">
     <metrics statements="26" coveredstatements="26" conditionals="18" coveredconditionals="18" methods="4" coveredmethods="4" elements="48" coveredelements="48" complexity="0" loc="26" ncloc="26" packages="1" files="1" classes="1"/>
     <file name="maxScore.js" path="/Users/ksukuper/JS/JS/maxScore.js">
       <metrics statements="26" coveredstatements="26" conditionals="18" coveredconditionals="18" methods="4" coveredmethods="4"/>
